@@ -1,0 +1,18 @@
+# Systemdateien ignorieren
+*/
+.bash*
+.cache/
+.config/
+.gnupg/
+.lesshst
+.local/
+.npm/
+.profile
+.ssh/
+.sudo_as_admin*
+Dokumente/
+Downloads/
+snap/
+
+# Verzeichnisse komplett
+*/

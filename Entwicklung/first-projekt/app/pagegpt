@@ -1,0 +1,107 @@
+import { useState } from "react";
+import Image from "next/image";
+
+export default function Home() {
+  const [darkMode, setDarkMode] = useState(false);
+
+  return (
+    <div className={`${darkMode ? "bg-gray-900 text-white" : "bg-white text-black"} min-h-screen`}>
+      {/* Header */}
+      <header className="py-6 px-8 flex justify-between items-center">
+        <h1 className="text-3xl font-bold">Meine Moderne Webseite</h1>
+        <button
+          onClick={() => setDarkMode(!darkMode)}
+          className="px-4 py-2 rounded-lg border-2 border-gray-800 dark:border-gray-200 transition-colors"
+        >
+          {darkMode ? "Light Mode" : "Dark Mode"}
+        </button>
+      </header>
+
+      {/* Main Content */}
+      <main className="flex flex-col items-center justify-center py-16">
+        <div className="max-w-2xl text-center mb-12">
+          <h2 className="text-4xl font-semibold mb-4">Willkommen auf meiner Seite!</h2>
+          <p className="text-lg mb-8">
+            Dies ist eine moderne Webseite, die mit Next.js und Tailwind CSS erstellt wurde. Lass uns
+            beginnen!
+          </p>
+          <a
+            href="#portfolio"
+            className="px-6 py-3 bg-blue-600 text-white rounded-lg shadow-md hover:bg-blue-700 transition-all"
+          >
+            Mein Portfolio
+          </a>
+        </div>
+
+        {/* Portfolio Section */}
+        <section id="portfolio" className="bg-gray-100 dark:bg-gray-800 py-16 w-full">
+          <h3 className="text-3xl font-semibold text-center text-black dark:text-white mb-8">
+            Meine Projekte
+          </h3>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 px-8">
+            <div className="bg-white dark:bg-gray-700 rounded-lg shadow-lg overflow-hidden transition-transform transform hover:scale-105">
+              <Image
+                src="/project1.jpg"
+                alt="Projekt 1"
+                width={500}
+                height={300}
+                className="w-full h-48 object-cover"
+              />
+              <div className="p-6">
+                <h4 className="text-xl font-semibold">Projekt 1</h4>
+                <p className="text-gray-600 dark:text-gray-300 mt-2">
+                  Beschreibung von Projekt 1. Hier zeige ich, wie ich Technologien eingesetzt habe.
+                </p>
+              </div>
+            </div>
+
+            <div className="bg-white dark:bg-gray-700 rounded-lg shadow-lg overflow-hidden transition-transform transform hover:scale-105">
+              <Image
+                src="/project2.jpg"
+                alt="Projekt 2"
+                width={500}
+                height={300}
+                className="w-full h-48 object-cover"
+              />
+              <div className="p-6">
+                <h4 className="text-xl font-semibold">Projekt 2</h4>
+                <p className="text-gray-600 dark:text-gray-300 mt-2">
+                  Beschreibung von Projekt 2. Dies ist ein weiteres Beispiel für ein cooles Projekt.
+                </p>
+              </div>
+            </div>
+
+            <div className="bg-white dark:bg-gray-700 rounded-lg shadow-lg overflow-hidden transition-transform transform hover:scale-105">
+              <Image
+                src="/project3.jpg"
+                alt="Projekt 3"
+                width={500}
+                height={300}
+                className="w-full h-48 object-cover"
+              />
+              <div className="p-6">
+                <h4 className="text-xl font-semibold">Projekt 3</h4>
+                <p className="text-gray-600 dark:text-gray-300 mt-2">
+                  Beschreibung von Projekt 3. Hier geht es um ein spannendes Thema in der Webentwicklung.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      {/* Footer */}
+      <footer className="py-8 bg-gray-800 text-white text-center">
+        <p>&copy; 2026 Rasel. Alle Rechte vorbehalten.</p>
+        <div className="space-x-4">
+          <a href="https://github.com/rasel" target="_blank" rel="noopener noreferrer">
+            GitHub
+          </a>
+          <a href="https://linkedin.com/in/rasel" target="_blank" rel="noopener noreferrer">
+            LinkedIn
+          </a>
+        </div>
+      </footer>
+    </div>
+  );
+}
